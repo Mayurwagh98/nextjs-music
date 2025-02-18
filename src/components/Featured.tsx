@@ -34,7 +34,11 @@ const Featured = () => {
             className="flex flex-col rounded-[22px] bg-white dark:bg-zinc-900 overflow-hidden h-full w-full px-4 py-3 min-h-[14rem]"
           >
             <div className="flex flex-col space-y-3 justify-center items-center text-center">
-              <img src={course.image} alt="image" className="w-[90%] h-[90%] rounded-lg" />
+              <img
+                src={course.image}
+                alt="image"
+                className="w-[90%] h-[90%] rounded-lg"
+              />
               <h3 className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                 {course.title}
               </h3>

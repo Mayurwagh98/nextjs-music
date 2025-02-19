@@ -1,6 +1,5 @@
 "use client";
 
-import { DotBackgroundDemo } from "./ui/DotBackgroundDemo";
 import { HeroHighlight } from "./ui/hero-highlight";
 import { Button } from "./ui/moving-border";
 import { Spotlight } from "./ui/SpotLight";

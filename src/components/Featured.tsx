@@ -1,6 +1,7 @@
 "use client";
 import courseData from "../data/musicData.json";
 import { BackgroundGradient } from "./ui/background-gradient";
+import { GlareCard } from "./ui/glare-card";
 
 interface Course {
   id: number;
@@ -18,7 +19,7 @@ const Featured = () => {
     (course: Course) => course.isFeatured
   );
   return (
-    <div className="w-full bg-gray-900 min-h-[30rem] py-5 px-3">
+    <div className="w-full bg-[#1A1A1D] min-h-[30rem] py-5 px-3">
       <div className="text-center">
         <h2 className="text-base text-teal-600 font-semibold tracking-wide uppercase">
           FEATURED COURSES
@@ -29,15 +30,15 @@ const Featured = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-4">
         {featuredCourses?.map((course: Course) => (
-          <BackgroundGradient
+          <GlareCard
             key={course.id}
-            className="flex flex-col rounded-[22px] bg-white dark:bg-zinc-900 overflow-hidden h-full w-full px-4 py-3 min-h-[14rem]"
+            className="flex flex-col rounded-[22px] overflow-hidden h-full w-full px-4 py-3 min-h-[14rem]"
           >
             <div className="flex flex-col space-y-3 justify-center items-center text-center">
               <img
                 src={course.image}
                 alt="image"
-                className="w-[90%] h-[90%] rounded-lg"
+                className="w-[90%] h-[90%] rounded-lg mt-2"
               />
               <h3 className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                 {course.title}
@@ -52,9 +53,10 @@ const Featured = () => {
                 View
               </button>
             </div>
-          </BackgroundGradient>
+          </GlareCard>
         ))}
       </div>
+
       <div className="mt-20 text-center">
         <button className="bg-purple-500 text-white px-3 py-2 rounded-md">
           View courses

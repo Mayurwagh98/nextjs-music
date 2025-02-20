@@ -1,6 +1,5 @@
 "use client";
 import courseData from "../data/musicData.json";
-import { BackgroundGradient } from "./ui/background-gradient";
 import { GlareCard } from "./ui/glare-card";
 
 interface Course {

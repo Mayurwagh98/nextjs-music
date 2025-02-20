@@ -51,7 +51,7 @@ const Instructors = () => {
 
   return (
     <div className="relative h-[35rem] w-full bg-black flex justify-center items-center py-10">
-      <WavyBackground className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full">
+      <WavyBackground className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center">
         <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
           Meet Our Instructors
         </p>

@@ -31,7 +31,7 @@ const Featured = () => {
         {featuredCourses?.map((course: Course) => (
           <GlareCard
             key={course.id}
-            className="flex flex-col rounded-[22px] overflow-hidden h-full w-full px-4 py-3 min-h-[14rem]"
+            className="flex flex-col rounded-md overflow-hidden h-full w-full px-4 py-3 min-h-[14rem]"
           >
             <div className="flex flex-col space-y-3 justify-center items-center text-center">
               <img

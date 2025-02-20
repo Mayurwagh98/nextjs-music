@@ -36,7 +36,7 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div className="h-[40rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative flex flex-col items-center justify-center">
+    <div className="h-[40rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative flex flex-col items-center justify-center px-3 text-center">
       <h3 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-600 dark:from-neutral-50 dark:to-neutral-400">
         Voices of Musical Excellence
       </h3>

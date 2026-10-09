@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local data store (JSON file used when MONGODB_URI isn't set)
+/.data/
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/

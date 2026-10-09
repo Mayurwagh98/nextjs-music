@@ -1,0 +1,46 @@
+{
+  "instructors": [
+    {
+      "slug": "daniel-okafor",
+      "name": "Daniel Okafor",
+      "role": "Guitar & Blues",
+      "bio": "Session guitarist for 15 years; teaches the feel behind the notes.",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=70"
+    },
+    {
+      "slug": "marcus-bell",
+      "name": "Marcus Bell",
+      "role": "Drums & Jazz",
+      "bio": "Touring drummer and jazz educator who believes everything starts with time.",
+      "image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=70"
+    },
+    {
+      "slug": "priya-nair",
+      "name": "Priya Nair",
+      "role": "Voice & Songwriting",
+      "bio": "Vocal coach and songwriter with a background in Carnatic and pop.",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=70"
+    },
+    {
+      "slug": "elena-rossi",
+      "name": "Elena Rossi",
+      "role": "Piano & Classical",
+      "bio": "Concert pianist who has taught beginners for over a decade.",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=70"
+    },
+    {
+      "slug": "sam-whitaker",
+      "name": "Sam Whitaker",
+      "role": "Music Production",
+      "bio": "Mix engineer for indie releases; teaches production in any DAW.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=70"
+    },
+    {
+      "slug": "mia-tanaka",
+      "name": "Mia Tanaka",
+      "role": "Electronic Music",
+      "bio": "DJ and sound designer focused on synthesis and club arrangement.",
+      "image": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=400&q=70"
+    }
+  ]
+}

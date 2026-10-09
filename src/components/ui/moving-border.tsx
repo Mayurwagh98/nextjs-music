@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "motion/react";
 import { useRef } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export function Button({
@@ -137,3 +138,23 @@ export const MovingBorder = ({
     </>
   );
 };
+
+/**
+ * Server Components can't pass `Link` (a function) to a Client Component as a
+ * prop, so this client-side wrapper does it for them.
+ */
+export function MovingBorderLink({
+  href,
+  children,
+  className,
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <Button as={Link} href={href} borderRadius="1.7rem" className={className}>
+      {children}
+    </Button>
+  );
+}

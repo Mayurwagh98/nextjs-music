@@ -19,7 +19,7 @@ export default function Error({
         We couldn&apos;t load this page
       </p>
       {error.digest && (
-        <p className="mt-4 text-sm text-neutral-500">Error ID: {error.digest}</p>
+        <p className="mt-4 text-sm text-neutral-400">Error ID: {error.digest}</p>
       )}
       <button
         onClick={reset}

@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "Mayur",
+      "email": "mayur@gmail.com",
+      "passwordHash": "$2b$10$IYzleEKC4DlivgFF.Y60eOv9lhlo97uG880TqxnbtsiyimkYRLI0C",
+      "id": "c82b1070-9a2b-4d75-a113-3fd58c09eae7",
+      "createdAt": "2026-10-09T16:08:26.200Z"
+    }
+  ],
+  "enrollments": [
+    {
+      "userId": "c82b1070-9a2b-4d75-a113-3fd58c09eae7",
+      "courseSlug": "advanced-vocal-techniques",
+      "enrolledAt": "2026-10-09T16:09:21.247Z"
+    }
+  ],
+  "waitlist": []
+}

@@ -23,12 +23,20 @@ function toUser(doc: UserDoc): UserRecord {
  * user+course, one waitlist entry per email) is enforced by unique indexes,
  * so concurrent requests can't create duplicates.
  */
-export function createMongoStore(uri: string): Store {
-  const client = new MongoClient(uri, { maxPoolSize: 10 });
+export function createMongoStore(uri: string): Store & { close(): Promise<void> } {
+  const client = new MongoClient(uri, {
+    maxPoolSize: 10,
+    // Fail fast with a clear error instead of hanging if the cluster is unreachable
+    // (e.g. the host's IP isn't allowed in Atlas → Network Access).
+    serverSelectionTimeoutMS: 10_000,
+    appName: "cadence-music-academy",
+  });
 
   const ready = (async () => {
     await client.connect();
-    const db = client.db(process.env.MONGODB_DB ?? "cadence");
+    // Uses the database named in the connection string (…mongodb.net/<db>),
+    // unless MONGODB_DB overrides it.
+    const db = client.db(process.env.MONGODB_DB || undefined);
     const users = db.collection<UserDoc>("users");
     const enrollments = db.collection<EnrollmentDoc>("enrollments");
     const waitlist = db.collection<WaitlistDoc>("waitlist");
@@ -50,7 +58,7 @@ export function createMongoStore(uri: string): Store {
   const normalise = (email: string) => email.trim().toLowerCase();
 
   return {
-    kind: "mongodb",
+    close: () => client.close(),
 
     async createUser(input) {
       const users = await col("users");

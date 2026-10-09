@@ -19,12 +19,10 @@ export interface WaitlistRecord {
 }
 
 /**
- * Persistence for user-generated data. Two implementations share this
- * contract: MongoDB (when MONGODB_URI is set) and a JSON file for local
- * development, so the app runs with zero setup.
+ * Persistence for user-generated data (accounts, enrollments, waitlist),
+ * backed by MongoDB. The rest of the app depends only on this interface.
  */
 export interface Store {
-  readonly kind: "mongodb" | "file";
   createUser(input: Omit<UserRecord, "id" | "createdAt">): Promise<UserRecord | "email-taken">;
   findUserByEmail(email: string): Promise<UserRecord | null>;
   findUserById(id: string): Promise<UserRecord | null>;

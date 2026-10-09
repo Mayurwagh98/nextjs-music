@@ -60,19 +60,17 @@ src/
 │  ├─ catalog.ts                 Cached catalog reads ("use cache")
 │  ├─ enrollments.ts             Cached per-user / per-course reads, cache tags
 │  ├─ auth/                      JWT session (jose), cookie helpers, Data Access Layer
-│  ├─ store/                     Persistence: MongoDB or JSON-file implementation
+│  ├─ store/                     MongoDB persistence behind a small Store interface
 │  ├─ search.ts schedule.ts      Pure logic (unit tested)
 │  └─ validation.ts              Zod schemas shared by actions
 └─ proxy.ts                      Optimistic route protection
 ```
 
 **Data.** Catalog content is versioned with the code and read through cached functions. User data
-(accounts, enrollments, waitlist) goes through a small `Store` interface with two implementations:
-
-- **MongoDB** when `MONGODB_URI` is set. Unique indexes enforce one account per email and one
-  enrollment per user and course, even under concurrent requests.
-- **JSON file** (`.data/db.json`) otherwise, so the project runs with zero setup. Writes are
-  serialised and written atomically.
+(accounts, enrollments, waitlist) is stored in **MongoDB** (`users`, `enrollments` and `waitlist`
+collections) through a small `Store` interface. Unique indexes enforce one account per email, one
+enrollment per user and course, and one waitlist entry per email, even under concurrent requests.
+One connection pool is shared per server process.
 
 **Auth.** Passwords are hashed with bcrypt. Sessions are signed JWTs (HS256, `jose`) stored in an
 `httpOnly`, `SameSite=Lax` cookie (`Secure` in production). Login takes the same time whether or not
@@ -82,31 +80,33 @@ the email exists, and `?next=` redirects are restricted to same-site paths.
 
 ```bash
 npm install
-cp .env.example .env.local   # optional locally; SESSION_SECRET is required in production
+cp .env.example .env.local   # then set MONGODB_URI (and SESSION_SECRET for production)
 npm run dev                  # http://localhost:3000
 ```
 
-Without `MONGODB_URI`, data is saved to `.data/db.json`.
+`MONGODB_URI` is required. A free MongoDB Atlas cluster works, or a local `mongod`
+(`mongodb://127.0.0.1:27017/cadence`). The database named in the URI is the one used.
 
 | Script | What it does |
 |---|---|
 | `npm run dev` / `build` / `start` | Develop, build, run production build |
 | `npm run lint` | ESLint (Next.js core-web-vitals + TypeScript rules) |
 | `npm run typecheck` | Generate route types and run `tsc` |
-| `npm test` | Unit tests (Vitest): search, schedule, validation, session tokens, file store |
-| `npm run test:e2e` | Playwright end-to-end tests against a production build |
+| `npm test` | Unit tests (Vitest). The MongoDB store tests run when `MONGODB_TEST_URI` is set. |
+| `npm run test:e2e` | Playwright end-to-end tests against a production build and a test database (`E2E_MONGODB_URI`, default local `mongod`) |
 | `npm run audio:generate` | Re-synthesise the preview clips (needs Python 3, numpy, ffmpeg) |
 
 ## Testing and CI
 
 - **Unit tests (Vitest):** filter parsing and sorting, the weekly schedule (including a DST case),
-  Zod schemas, JWT signing and tamper detection, and file-store concurrency and dedupe.
+  Zod schemas, JWT signing and tamper detection, and the MongoDB store (unique indexes, concurrent
+  enrollments, waitlist dedupe) against a throwaway database.
 - **End-to-end tests (Playwright):** search and filters, the modal and the full page, 404s, the
   player surviving navigation, signup validation, the full sign up → enroll → dashboard → leave →
   log out → log in flow, duplicate emails, open-redirect protection, the waitlist, the JSON API and
   SEO files.
-- **GitHub Actions** (`.github/workflows/ci.yml`) runs lint, typecheck and unit tests, then the
-  end-to-end suite, on every push and pull request.
+- **GitHub Actions** (`.github/workflows/ci.yml`) starts a MongoDB service container and runs lint,
+  typecheck and unit tests, then the end-to-end suite, on every push and pull request.
 
 ## Performance
 
@@ -116,7 +116,9 @@ reworking the canvas animation.
 
 ## Deploying (Vercel)
 
-1. Create a free MongoDB Atlas cluster and copy the connection string.
-2. Import the repo in Vercel and set `SESSION_SECRET`, `MONGODB_URI` and `NEXT_PUBLIC_SITE_URL`.
-3. Deploy. Without `MONGODB_URI` the app still runs, but serverless instances keep data in memory
-   only.
+1. Create a free MongoDB Atlas cluster and copy the connection string. In **Network Access**, allow
+   `0.0.0.0/0`, because Vercel doesn't use fixed IP addresses.
+2. Import the repo in Vercel and set `MONGODB_URI`, `SESSION_SECRET` and `NEXT_PUBLIC_SITE_URL`
+   for Production (and Preview, if you use preview deployments).
+3. Deploy. The build reads the database too (enrollment and waitlist counts are prerendered), so
+   `MONGODB_URI` must be available at build time.

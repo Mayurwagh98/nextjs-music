@@ -4,7 +4,8 @@ const PORT = Number(process.env.E2E_PORT ?? 3210);
 
 /*
  * End-to-end tests run against a production build (`next build && next start`)
- * with a throwaway JSON data file, so they never touch a real database.
+ * and a separate test database, so they never touch your real data.
+ * Defaults to a local MongoDB; override with E2E_MONGODB_URI.
  */
 export default defineConfig({
   testDir: "./e2e",
@@ -24,9 +25,9 @@ export default defineConfig({
     timeout: 240_000,
     reuseExistingServer: !process.env.CI,
     env: {
-      DATA_FILE: ".data/e2e.json",
       SESSION_SECRET: "e2e-only-secret-e2e-only-secret-e2e-only",
-      MONGODB_URI: "",
+      MONGODB_URI: process.env.E2E_MONGODB_URI ?? "mongodb://127.0.0.1:27017/cadence_e2e",
+      MONGODB_DB: "",
     },
   },
 });

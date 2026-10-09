@@ -1,23 +1,22 @@
 import "server-only";
-import path from "node:path";
-import { createFileStore } from "./file-store";
 import { createMongoStore } from "./mongo-store";
 import type { Store } from "./types";
 
 export type { Store, UserRecord, EnrollmentRecord } from "./types";
 
-// Keep one instance across hot reloads in development (and one Mongo
-// connection pool per server process in production).
+// One MongoClient (and connection pool) per server process. Stored on
+// globalThis so hot reloads in development don't open a new pool each time.
 const globalForStore = globalThis as unknown as { __cadenceStore?: Store };
 
-function createStore(): Store {
-  const uri = process.env.MONGODB_URI;
-  if (uri) return createMongoStore(uri);
-  const file = process.env.DATA_FILE ?? path.join(process.cwd(), ".data", "db.json");
-  return createFileStore(file);
-}
-
 export function getStore(): Store {
-  globalForStore.__cadenceStore ??= createStore();
+  if (!globalForStore.__cadenceStore) {
+    const uri = process.env.MONGODB_URI;
+    if (!uri) {
+      throw new Error(
+        "MONGODB_URI is not set. Add your MongoDB connection string to .env.local (see .env.example)."
+      );
+    }
+    globalForStore.__cadenceStore = createMongoStore(uri);
+  }
   return globalForStore.__cadenceStore;
 }

@@ -1,4 +1,3 @@
-"use client";
 import courseData from "../../data/musicData.json";
 import Image from "next/image";
 import React from "react";
@@ -19,7 +18,7 @@ interface Course {
 
 const Courses = () => {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-full min-h-screen">
       <h1 className="text-lg md:text-3xl text-center font-sans font-bold mb-8 text-white mt-40">
         All courses ({courseData.courses.length})
       </h1>
@@ -50,14 +49,16 @@ const Courses = () => {
                 />
               </CardItem>
               <div className="flex justify-between items-center mt-20">
-                <CardItem
-                  translateZ={20}
-                  as={Link}
-                  href="https://twitter.com/mannupaaji"
-                  target="__blank"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
+                {/* Server Components can't pass `Link` as a prop to a Client Component,
+                    so the link is rendered as a child instead of via `as={Link}`. */}
+                <CardItem translateZ={20}>
+                  <Link
+                    href="https://twitter.com/mannupaaji"
+                    target="_blank"
+                    className="block px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                  >
+                    Try now →
+                  </Link>
                 </CardItem>
                 <CardItem
                   translateZ={20}

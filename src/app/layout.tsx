@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+
+// The design always referenced `font-montserrat`, but the font was never loaded,
+// so every page silently fell back to Arial. next/font/local self-hosts the
+// variable font (no request to Google at runtime, no layout shift) and exposes it
+// as a CSS variable that tailwind.config.ts maps to `font-montserrat`.
+const montserrat = localFont({
+  src: "./fonts/Montserrat-Variable.woff2",
+  variable: "--font-montserrat",
+  display: "swap",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${montserrat.variable}`}>
       <body className="antialiased font-montserrat bg-background text-foreground">
         <Navbar />
         {children}

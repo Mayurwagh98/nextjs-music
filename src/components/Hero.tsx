@@ -1,5 +1,3 @@
-"use client";
-
 import { HeroHighlight } from "./ui/hero-highlight";
 import { Button } from "./ui/moving-border";
 import { Spotlight } from "./ui/SpotLight";
@@ -8,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <HeroHighlight>
-        <div className="flex flex-col justify-center items-center h-auto md:h-[40rem] relative overflow-hidden mx-auto py-10 md:py-0 w-screen">
+        <div className="flex flex-col justify-center items-center h-auto md:h-[40rem] relative overflow-hidden mx-auto py-10 md:py-0 w-full">
           {/* <DotBackgroundDemo /> */}
           <Spotlight
             className="-top-40 left-0 md:left-60 md:-top-20 lg:left-10"

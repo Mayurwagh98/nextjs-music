@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 import courseData from "../data/musicData.json";
 import { GlareCard } from "./ui/glare-card";
 
@@ -34,9 +34,12 @@ const Featured = () => {
             className="flex flex-col rounded-md overflow-hidden h-full w-full px-4 py-3 min-h-[14rem]"
           >
             <div className="flex flex-col space-y-3 justify-center items-center text-center">
-              <img
+              <Image
                 src={course.image}
-                alt="image"
+                alt={course.title}
+                width={360}
+                height={240}
+                sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
                 className="w-[90%] h-[90%] rounded-lg mt-2"
               />
               <h3 className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">

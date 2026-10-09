@@ -1,42 +1,52 @@
 "use client";
 
-import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { INSTRUMENTS } from "@/lib/types";
+import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 
-function Navbar({ className }: { className?: string }) {
+/**
+ * Client Component for the hover menu. The auth area (which reads the session
+ * cookie on the server) is passed in as a slot, so this file never touches
+ * auth and the rest of the navbar stays in the static shell.
+ */
+function Navbar({ authSlot, className }: { authSlot: React.ReactNode; className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const pathname = usePathname();
+
   return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-    >
+    <header className={cn("fixed top-4 sm:top-8 inset-x-0 max-w-2xl mx-auto z-50 px-3", className)}>
       <Menu setActive={setActive}>
-        <Link href={"/"}>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Home"
-          ></MenuItem>
-        </Link>
-        <MenuItem setActive={setActive} active={active} item="Our Courses">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/courses">All Courses</HoveredLink>
-            <HoveredLink href="/courses">Basic Music Theory</HoveredLink>
-            <HoveredLink href="/courses">Advanced Composition</HoveredLink>
-            <HoveredLink href="/courses">Songwriting</HoveredLink>
-            <HoveredLink href="/courses">Music Production</HoveredLink>
+        <MenuItem setActive={setActive} active={active} item="Home" href="/" current={pathname === "/"} />
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Courses"
+          href="/courses"
+          current={pathname.startsWith("/courses")}
+        >
+          <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
+            <HoveredLink href="/courses">All courses</HoveredLink>
+            {INSTRUMENTS.map((instrument) => (
+              <HoveredLink key={instrument} href={`/courses?instrument=${instrument}`}>
+                {instrument}
+              </HoveredLink>
+            ))}
           </div>
         </MenuItem>
-        <Link href={"/contact"}>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Contact Us"
-          ></MenuItem>
-        </Link>
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Waitlist"
+          href="/waitlist"
+          current={pathname === "/waitlist"}
+        />
+        <div className="ml-1 border-l border-white/15 pl-4 sm:pl-6" onMouseEnter={() => setActive(null)}>
+          {authSlot}
+        </div>
       </Menu>
-    </div>
+    </header>
   );
 }
 

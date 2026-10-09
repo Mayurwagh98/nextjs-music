@@ -1,7 +1,17 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+
+/**
+ * Deterministic stand-in for Math.random(): the original randomised timings
+ * during render, which differs between server and client (hydration
+ * mismatch) and is rejected while prerendering with Cache Components.
+ */
+function jitter(index: number, salt: number) {
+  const x = Math.sin(index * 12.9898 + salt * 78.233) * 43758.5453;
+  return x - Math.floor(x);
+}
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
@@ -103,13 +113,13 @@ export const BackgroundBeams = React.memo(
                   x1: ["0%", "100%"],
                   x2: ["0%", "95%"],
                   y1: ["0%", "100%"],
-                  y2: ["0%", `${93 + Math.random() * 8}%`],
+                  y2: ["0%", `${93 + jitter(index, 1) * 8}%`],
                 }}
                 transition={{
-                  duration: Math.random() * 10 + 10,
+                  duration: jitter(index, 2) * 10 + 10,
                   ease: "easeInOut",
                   repeat: Infinity,
-                  delay: Math.random() * 10,
+                  delay: jitter(index, 3) * 10,
                 }}
               >
                 <stop stopColor="#18CCFC" stopOpacity="0"></stop>

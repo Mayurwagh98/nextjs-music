@@ -1,0 +1,29 @@
+{
+  "testimonials": [
+    {
+      "quote": "The structured lessons took me from a complete beginner to playing my favourite songs at a family wedding.",
+      "name": "Sarah Chen",
+      "title": "Guitar Fundamentals"
+    },
+    {
+      "quote": "Theory finally clicked. I can hear why a piece works now, not just play it.",
+      "name": "Michael Rodriguez",
+      "title": "Classical Music History"
+    },
+    {
+      "quote": "The weekly jam sessions kept me practising. I've grown more in three months than in two years alone.",
+      "name": "James Wilson",
+      "title": "Blues Guitar Techniques"
+    },
+    {
+      "quote": "Ghost notes, shuffles, fills: the drum course broke everything into steps I could actually practise.",
+      "name": "Emma Thompson",
+      "title": "Drumming Mastery"
+    },
+    {
+      "quote": "I finished and released my first track. The mixing modules alone were worth it.",
+      "name": "David Kim",
+      "title": "Music Production Fundamentals"
+    }
+  ]
+}

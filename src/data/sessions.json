@@ -1,0 +1,59 @@
+{
+  "timezone": "Asia/Kolkata",
+  "sessions": [
+    {
+      "id": "theory-clinic",
+      "title": "Music Theory Clinic",
+      "description": "Bring your questions on scales, chords and reading music.",
+      "weekday": 2,
+      "time": "19:00",
+      "durationMinutes": 60,
+      "course": "classical-music-history"
+    },
+    {
+      "id": "production-review",
+      "title": "Production Feedback Session",
+      "description": "Share a work-in-progress mix and get notes live.",
+      "weekday": 4,
+      "time": "20:00",
+      "durationMinutes": 75,
+      "course": "music-production-fundamentals"
+    },
+    {
+      "id": "songwriting-circle",
+      "title": "Songwriting Circle",
+      "description": "Write to a weekly prompt and play it back to the group.",
+      "weekday": 6,
+      "time": "11:00",
+      "durationMinutes": 90,
+      "course": "songwriting-essentials"
+    },
+    {
+      "id": "jazz-jam",
+      "title": "Jazz Improvisation Jam",
+      "description": "Solo over a backing track with guidance on phrasing.",
+      "weekday": 5,
+      "time": "18:30",
+      "durationMinutes": 60,
+      "course": "jazz-improvisation"
+    },
+    {
+      "id": "piano-masterclass",
+      "title": "Piano Performance Masterclass",
+      "description": "Play a piece and work through performance nerves.",
+      "weekday": 0,
+      "time": "17:00",
+      "durationMinutes": 60,
+      "course": "piano-for-beginners"
+    },
+    {
+      "id": "blues-jam",
+      "title": "Blues Guitar Jam",
+      "description": "Trade 12-bar solos and practise call-and-response.",
+      "weekday": 3,
+      "time": "19:30",
+      "durationMinutes": 60,
+      "course": "blues-guitar-techniques"
+    }
+  ]
+}

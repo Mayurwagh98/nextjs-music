@@ -1,0 +1,464 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "slug": "guitar-fundamentals",
+      "title": "Guitar Fundamentals",
+      "description": "Learn the basics of playing guitar with our comprehensive beginner's course.",
+      "longDescription": "Go from never having held a guitar to strumming full songs. You'll learn how to tune, fret cleanly, switch between the eight essential open chords and keep steady time with a metronome.",
+      "instrument": "Guitar",
+      "level": "Beginner",
+      "price": 99.99,
+      "durationWeeks": 6,
+      "instructor": "daniel-okafor",
+      "isFeatured": true,
+      "image": "https://plus.unsplash.com/premium_photo-1682125853703-896a05629709?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bXVzaWN8ZW58MHx8MHx8fDA%3D",
+      "preview": "/audio/guitar-fundamentals.mp3",
+      "curriculum": [
+        {
+          "title": "Anatomy, tuning and posture",
+          "minutes": 18
+        },
+        {
+          "title": "Your first four open chords",
+          "minutes": 32
+        },
+        {
+          "title": "Strumming patterns and timing",
+          "minutes": 28
+        },
+        {
+          "title": "Chord changes without the pause",
+          "minutes": 35
+        },
+        {
+          "title": "Reading tabs and chord charts",
+          "minutes": 22
+        },
+        {
+          "title": "Playing your first three songs",
+          "minutes": 40
+        }
+      ],
+      "outcomes": [
+        "Tune by ear and with a tuner",
+        "Change between 8 open chords in time",
+        "Play complete songs from a chord chart"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "piano-for-beginners",
+      "title": "Piano for Beginners",
+      "description": "Start your musical journey with foundational piano skills taught by expert instructors.",
+      "longDescription": "A structured first step at the keyboard. Learn hand position, read treble and bass clef, and build the coordination to play simple pieces with both hands.",
+      "instrument": "Piano",
+      "level": "Beginner",
+      "price": 109.99,
+      "durationWeeks": 8,
+      "instructor": "elena-rossi",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D",
+      "preview": "/audio/piano-for-beginners.mp3",
+      "curriculum": [
+        {
+          "title": "Finding your way around the keys",
+          "minutes": 20
+        },
+        {
+          "title": "Hand position and finger numbers",
+          "minutes": 24
+        },
+        {
+          "title": "Reading the treble clef",
+          "minutes": 30
+        },
+        {
+          "title": "Reading the bass clef",
+          "minutes": 30
+        },
+        {
+          "title": "Hands together",
+          "minutes": 38
+        },
+        {
+          "title": "Your first recital piece",
+          "minutes": 42
+        }
+      ],
+      "outcomes": [
+        "Read single-line music in both clefs",
+        "Play hands-together pieces at a steady tempo",
+        "Practise efficiently with a routine"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "advanced-vocal-techniques",
+      "title": "Advanced Vocal Techniques",
+      "description": "Enhance your singing with advanced vocal techniques for intermediate to advanced learners.",
+      "longDescription": "For singers who already perform. Extend your range safely, blend chest and head voice, and add expressive control: vibrato, runs and dynamics that serve the song.",
+      "instrument": "Voice",
+      "level": "Advanced",
+      "price": 119.99,
+      "durationWeeks": 8,
+      "instructor": "priya-nair",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWN8ZW58MHx8MHx8fDA%3D",
+      "preview": "/audio/advanced-vocal-techniques.mp3",
+      "curriculum": [
+        {
+          "title": "Breath support under pressure",
+          "minutes": 30
+        },
+        {
+          "title": "Mixing chest and head voice",
+          "minutes": 36
+        },
+        {
+          "title": "Extending your upper range",
+          "minutes": 34
+        },
+        {
+          "title": "Controlled vibrato",
+          "minutes": 26
+        },
+        {
+          "title": "Runs and riffs",
+          "minutes": 40
+        },
+        {
+          "title": "Performance and stamina",
+          "minutes": 32
+        }
+      ],
+      "outcomes": [
+        "Sing through your passaggio without a break",
+        "Control vibrato on demand",
+        "Hold a 45-minute set without fatigue"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "drumming-mastery",
+      "title": "Drumming Mastery",
+      "description": "Master the drums with our comprehensive course covering all skill levels.",
+      "longDescription": "Lock in your groove and open up the kit. Rudiments, independence exercises and fills across rock, funk and shuffle feels, all built around playing with a band.",
+      "instrument": "Drums",
+      "level": "Intermediate",
+      "price": 129.99,
+      "durationWeeks": 10,
+      "instructor": "marcus-bell",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVzaWN8ZW58MHx8MHx8fDA%3D",
+      "preview": "/audio/drumming-mastery.mp3",
+      "curriculum": [
+        {
+          "title": "Rudiments that matter",
+          "minutes": 28
+        },
+        {
+          "title": "Four-limb independence",
+          "minutes": 36
+        },
+        {
+          "title": "Rock and pop grooves",
+          "minutes": 30
+        },
+        {
+          "title": "Funk and ghost notes",
+          "minutes": 38
+        },
+        {
+          "title": "The shuffle feel",
+          "minutes": 32
+        },
+        {
+          "title": "Fills that land on one",
+          "minutes": 34
+        }
+      ],
+      "outcomes": [
+        "Play 10 core rudiments at 100+ bpm",
+        "Hold a groove with ghost notes",
+        "Build fills that resolve cleanly"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "jazz-improvisation",
+      "title": "Jazz Improvisation",
+      "description": "Learn the art of jazz improvisation with this course designed for all levels.",
+      "longDescription": "Learn to improvise over changes rather than around them. Scales, guide tones and the ii-V-I, with transcription exercises that train your ear as much as your fingers.",
+      "instrument": "Theory",
+      "level": "Advanced",
+      "price": 139.99,
+      "durationWeeks": 8,
+      "instructor": "marcus-bell",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bXVzaWN8ZW58MHx8MHx8fDA%3D",
+      "preview": "/audio/jazz-improvisation.mp3",
+      "curriculum": [
+        {
+          "title": "The ii-V-I and why it matters",
+          "minutes": 30
+        },
+        {
+          "title": "Guide-tone lines",
+          "minutes": 34
+        },
+        {
+          "title": "Bebop scales and enclosures",
+          "minutes": 38
+        },
+        {
+          "title": "Rhythm and phrasing",
+          "minutes": 28
+        },
+        {
+          "title": "Transcribing a solo",
+          "minutes": 45
+        },
+        {
+          "title": "Soloing over a standard",
+          "minutes": 40
+        }
+      ],
+      "outcomes": [
+        "Outline chord changes in your solos",
+        "Transcribe short solos by ear",
+        "Improvise a chorus over a standard"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "music-production-fundamentals",
+      "title": "Music Production Fundamentals",
+      "description": "Dive into music production with this introductory course on the basics of sound engineering and mixing.",
+      "longDescription": "Everything you need to finish a track in any DAW: arrangement, recording, MIDI, EQ and compression, through to a mix that translates on headphones and speakers.",
+      "instrument": "Production",
+      "level": "Beginner",
+      "price": 149.99,
+      "durationWeeks": 6,
+      "instructor": "sam-whitaker",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bXVzaWN8ZW58MHx8MHx8fDA%3D",
+      "preview": "/audio/music-production-fundamentals.mp3",
+      "curriculum": [
+        {
+          "title": "DAW workflow essentials",
+          "minutes": 24
+        },
+        {
+          "title": "Recording audio and MIDI",
+          "minutes": 30
+        },
+        {
+          "title": "Arranging a song",
+          "minutes": 28
+        },
+        {
+          "title": "EQ for clarity",
+          "minutes": 32
+        },
+        {
+          "title": "Compression without fear",
+          "minutes": 30
+        },
+        {
+          "title": "Mixing and exporting",
+          "minutes": 36
+        }
+      ],
+      "outcomes": [
+        "Arrange a full track from a loop",
+        "Use EQ and compression with intent",
+        "Export a balanced mix"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "songwriting-essentials",
+      "title": "Songwriting Essentials",
+      "description": "Learn the essentials of songwriting to express your musical creativity.",
+      "longDescription": "Write songs that hold attention. Hooks, structure, lyrics and chord progressions, with a finished song by the end of the course.",
+      "instrument": "Voice",
+      "level": "Beginner",
+      "price": 159.99,
+      "durationWeeks": 6,
+      "instructor": "priya-nair",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG11c2ljfGVufDB8fDB8fHww",
+      "preview": "/audio/songwriting-essentials.mp3",
+      "curriculum": [
+        {
+          "title": "Where songs come from",
+          "minutes": 20
+        },
+        {
+          "title": "Song structure",
+          "minutes": 26
+        },
+        {
+          "title": "Chord progressions that work",
+          "minutes": 30
+        },
+        {
+          "title": "Writing a hook",
+          "minutes": 28
+        },
+        {
+          "title": "Lyrics: image and detail",
+          "minutes": 32
+        },
+        {
+          "title": "Finishing and demoing",
+          "minutes": 34
+        }
+      ],
+      "outcomes": [
+        "Structure a song with verse, chorus and bridge",
+        "Write a memorable hook",
+        "Record a simple demo"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "electronic-music-production",
+      "title": "Electronic Music Production",
+      "description": "Create compelling electronic music with our course designed for beginners to advanced users.",
+      "longDescription": "Design sounds and build tracks for the dance floor. Synthesis, drum programming, sidechain and arrangement techniques used in house, techno and future bass.",
+      "instrument": "Production",
+      "level": "Intermediate",
+      "price": 169.99,
+      "durationWeeks": 8,
+      "instructor": "mia-tanaka",
+      "isFeatured": true,
+      "image": "https://plus.unsplash.com/premium_photo-1664699106229-1bc773380c35?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG11c2ljfGVufDB8fDB8fHww",
+      "preview": "/audio/electronic-music-production.mp3",
+      "curriculum": [
+        {
+          "title": "Subtractive synthesis",
+          "minutes": 34
+        },
+        {
+          "title": "Programming drums",
+          "minutes": 30
+        },
+        {
+          "title": "Basslines and sidechain",
+          "minutes": 32
+        },
+        {
+          "title": "Sound design for leads",
+          "minutes": 36
+        },
+        {
+          "title": "Arranging for energy",
+          "minutes": 28
+        },
+        {
+          "title": "Club-ready mixdown",
+          "minutes": 38
+        }
+      ],
+      "outcomes": [
+        "Design patches from an init synth",
+        "Program dance-floor drum grooves",
+        "Arrange an 8-minute club track"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "classical-music-history",
+      "title": "Classical Music History",
+      "description": "Explore the rich history of classical music from its origins to the present day.",
+      "longDescription": "A listening-led tour from Bach to the 20th century. Understand how forms, harmony and orchestras changed, and hear the difference for yourself.",
+      "instrument": "Theory",
+      "level": "Beginner",
+      "price": 179.99,
+      "durationWeeks": 6,
+      "instructor": "elena-rossi",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2ljfGVufDB8fDB8fHww",
+      "preview": "/audio/classical-music-history.mp3",
+      "curriculum": [
+        {
+          "title": "The Baroque: Bach and Handel",
+          "minutes": 30
+        },
+        {
+          "title": "Classical form: Haydn and Mozart",
+          "minutes": 30
+        },
+        {
+          "title": "Beethoven the bridge",
+          "minutes": 28
+        },
+        {
+          "title": "The Romantics",
+          "minutes": 32
+        },
+        {
+          "title": "Nationalism and colour",
+          "minutes": 26
+        },
+        {
+          "title": "Into the 20th century",
+          "minutes": 30
+        }
+      ],
+      "outcomes": [
+        "Recognise the main eras by ear",
+        "Follow sonata and fugue forms",
+        "Build an informed listening list"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "blues-guitar-techniques",
+      "title": "Blues Guitar Techniques",
+      "description": "Discover the techniques of blues guitar to add soul and depth to your playing.",
+      "longDescription": "The vocabulary of blues guitar: the 12-bar form, shuffle rhythm, minor pentatonic boxes, string bends and vibrato, and how to phrase a solo that tells a story.",
+      "instrument": "Guitar",
+      "level": "Intermediate",
+      "price": 189.99,
+      "durationWeeks": 8,
+      "instructor": "daniel-okafor",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG11c2ljfGVufDB8fDB8fHww",
+      "preview": "/audio/blues-guitar-techniques.mp3",
+      "curriculum": [
+        {
+          "title": "The 12-bar blues",
+          "minutes": 24
+        },
+        {
+          "title": "Shuffle rhythm guitar",
+          "minutes": 30
+        },
+        {
+          "title": "Pentatonic boxes 1 to 5",
+          "minutes": 36
+        },
+        {
+          "title": "Bends and vibrato",
+          "minutes": 32
+        },
+        {
+          "title": "Call-and-response phrasing",
+          "minutes": 28
+        },
+        {
+          "title": "Building a solo",
+          "minutes": 38
+        }
+      ],
+      "outcomes": [
+        "Play a 12-bar shuffle in any key",
+        "Bend accurately to pitch",
+        "Solo across the neck with pentatonics"
+      ]
+    }
+  ]
+}

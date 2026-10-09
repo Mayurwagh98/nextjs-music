@@ -1,5 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,13 +10,18 @@ export const HoverEffect = ({
   className,
 }: {
   items: {
+    id: string;
     title: string;
     description: string;
     link: string;
+    /** Small line above the title, e.g. the session date. */
+    eyebrow?: string;
+    /** Small line under the description. */
+    footer?: string;
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
@@ -26,7 +33,7 @@ export const HoverEffect = ({
       {items.map((item, idx) => (
         <Link
           href={item?.link}
-          key={item?.link}
+          key={item.id}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -49,8 +56,10 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
+            {item.eyebrow && <p className="text-xs font-semibold uppercase tracking-wide text-teal-400">{item.eyebrow}</p>}
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+            {item.footer && <p className="mt-4 text-xs text-zinc-400">{item.footer}</p>}
           </Card>
         </Link>
       ))}
@@ -86,9 +95,9 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h3 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
       {children}
-    </h4>
+    </h3>
   );
 };
 export const CardDescription = ({
@@ -101,7 +110,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-4 text-zinc-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >
